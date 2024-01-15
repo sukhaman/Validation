@@ -4,77 +4,71 @@
 
 import Foundation
 
-
-public enum ValidationResult {
-    case valid
-    case invalid(message: String)
-}
-
 public struct Validation {
     
-    public static func validateUsername(_ username: String, minUsernameLength: Int = 4) -> ValidationResult {
+    public static func validateUsername(_ username: String, minUsernameLength: Int = 4) -> String {
         // Customize the validation logic for the username
         
 
         if username.isEmpty {
-            return .invalid(message: "Username cannot be empty.")
+            return "Username cannot be empty."
         } else if username.count < minUsernameLength {
-            return .invalid(message: "Username must be at least \(minUsernameLength) characters long.")
+            return  "Username must be at least \(minUsernameLength) characters long."
         }
 
         // Additional validation rules can be added
 
-        return .valid
+        return username
     }
 
-    public static func validatePassword(_ password: String, _ minPasswordLength: Int = 6) -> ValidationResult {
+    public static func validatePassword(_ password: String, _ minPasswordLength: Int = 6) -> String {
         // Customize the validation logic for the password
        
         if password.isEmpty {
-            return .invalid(message: "Password cannot be empty.")
+            return "Password cannot be empty."
         } else if password.count < minPasswordLength {
-            return .invalid(message: "Password must be at least \(minPasswordLength) characters long.")
+            return "Password must be at least \(minPasswordLength) characters long."
         }
 
         // Additional validation rules can be added
 
-        return .valid
+        return password
     }
     
-    public static func validateStreetAddress(_ streetAddress: String) -> ValidationResult {
+    public static func validateStreetAddress(_ streetAddress: String) -> String {
         // Customize the validation logic for the password
        
         if streetAddress.isEmpty {
-            return .invalid(message: "Password cannot be empty.")
+            return  "Street Address cannot be empty."
         }
 
         // Additional validation rules can be added
 
-        return .valid
+        return streetAddress
     }
     
-    public static func validateCity(_ city: String) -> ValidationResult {
+    public static func validateCity(_ city: String) -> String {
         // Customize the validation logic for the password
        
         if city.isEmpty {
-            return .invalid(message: "Password cannot be empty.")
+            return "City cannot be empty."
         }
 
         // Additional validation rules can be added
 
-        return .valid
+        return city
     }
     
-    public static func validateState(_ state: String) -> ValidationResult {
+    public static func validateState(_ state: String) -> String {
         // Customize the validation logic for the password
        
         if state.isEmpty {
-            return .invalid(message: "Password cannot be empty.")
+            return "State cannot be empty."
         }
 
         // Additional validation rules can be added
 
-        return .valid
+        return state
     }
 
     // Add more validation methods as needed
