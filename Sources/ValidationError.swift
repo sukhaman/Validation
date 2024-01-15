@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ValidationError: Error {
+public enum ValidationError: Error {
     case  invalidUsername
     case invalidPassword
     case invalidStreetAddress
