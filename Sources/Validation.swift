@@ -40,6 +40,42 @@ public struct Validation {
 
         return .valid
     }
+    
+    public static func validateStreetAddress(_ streetAddress: String) -> ValidationResult {
+        // Customize the validation logic for the password
+       
+        if streetAddress.isEmpty {
+            return .invalid(message: "Password cannot be empty.")
+        }
+
+        // Additional validation rules can be added
+
+        return .valid
+    }
+    
+    public static func validateCity(_ city: String) -> ValidationResult {
+        // Customize the validation logic for the password
+       
+        if city.isEmpty {
+            return .invalid(message: "Password cannot be empty.")
+        }
+
+        // Additional validation rules can be added
+
+        return .valid
+    }
+    
+    public static func validateState(_ state: String) -> ValidationResult {
+        // Customize the validation logic for the password
+       
+        if state.isEmpty {
+            return .invalid(message: "Password cannot be empty.")
+        }
+
+        // Additional validation rules can be added
+
+        return .valid
+    }
 
     // Add more validation methods as needed
 }
