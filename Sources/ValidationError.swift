@@ -14,7 +14,7 @@ public enum ValidationError: Error {
     case invalidCity
     case invalidState
     
-    var errorDecription: String? {
+   public var errorDecription: String? {
         switch self {
         case .invalidUsername:
             return "Username cannot be empty."
