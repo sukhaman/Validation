@@ -6,14 +6,12 @@ import Foundation
 
 public struct Validation {
     
-    public static func validateUsername(_ username: String, minUsernameLength: Int = 4) -> String {
+    public static func validateUsername(_ username: String, minUsernameLength: Int = 4) throws -> String {
         // Customize the validation logic for the username
         
 
         if username.isEmpty {
-            return "Username cannot be empty."
-        } else if username.count < minUsernameLength {
-            return  "Username must be at least \(minUsernameLength) characters long."
+            throw ValidationError.invalidUsername
         }
 
         // Additional validation rules can be added
@@ -21,13 +19,11 @@ public struct Validation {
         return username
     }
 
-    public static func validatePassword(_ password: String, _ minPasswordLength: Int = 6) -> String {
+    public static func validatePassword(_ password: String, _ minPasswordLength: Int = 6) throws -> String {
         // Customize the validation logic for the password
        
         if password.isEmpty {
-            return "Password cannot be empty."
-        } else if password.count < minPasswordLength {
-            return "Password must be at least \(minPasswordLength) characters long."
+            throw ValidationError.invalidPassword
         }
 
         // Additional validation rules can be added
@@ -35,11 +31,11 @@ public struct Validation {
         return password
     }
     
-    public static func validateStreetAddress(_ streetAddress: String) -> String {
+    public static func validateStreetAddress(_ streetAddress: String) throws -> String {
         // Customize the validation logic for the password
        
         if streetAddress.isEmpty {
-            return  "Street Address cannot be empty."
+            throw ValidationError.invalidStreetAddress
         }
 
         // Additional validation rules can be added
@@ -47,11 +43,11 @@ public struct Validation {
         return streetAddress
     }
     
-    public static func validateCity(_ city: String) -> String {
+    public static func validateCity(_ city: String) throws -> String {
         // Customize the validation logic for the password
        
         if city.isEmpty {
-            return "City cannot be empty."
+            throw ValidationError.invalidCity
         }
 
         // Additional validation rules can be added
@@ -59,11 +55,11 @@ public struct Validation {
         return city
     }
     
-    public static func validateState(_ state: String) -> String {
+    public static func validateState(_ state: String) throws -> String {
         // Customize the validation logic for the password
        
         if state.isEmpty {
-            return "State cannot be empty."
+            throw ValidationError.invalidState
         }
 
         // Additional validation rules can be added
