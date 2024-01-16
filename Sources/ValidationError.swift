@@ -14,7 +14,7 @@ public enum ValidationError: LocalizedError {
     case invalidCity
     case invalidState
     
-   public var errorDecription: String? {
+   public var localizedDescription: String? {
         switch self {
         case .invalidUsername:
             return "Username cannot be empty."
