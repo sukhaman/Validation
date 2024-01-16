@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum ValidationError: Error {
+public enum ValidationError: LocalizedError {
     case  invalidUsername
     case invalidPassword
     case invalidStreetAddress
